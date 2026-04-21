@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRIATIVAMENTE</title>
+    <title>CRIATIVAMENTE - Transformação de Marca</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -105,6 +105,61 @@
 
         /* ─── FOOTER ─── */
         footer { background: var(--dark); color: rgba(255,255,255,0.5); padding: 40px; text-align: center; font-size: 14px; }
+
+        /* ══════════════════════════════════════
+           MOBILE — max 768px
+        ══════════════════════════════════════ */
+        @media (max-width: 768px) {
+
+            .section { padding: 60px 24px; }
+
+            /* Hero */
+            .hero { padding: 80px 24px; }
+            .hero h1 { font-size: 36px; letter-spacing: -1px; }
+            .hero p  { font-size: 17px !important; }
+
+            /* Títulos */
+            .section-title { font-size: 32px; margin-bottom: 40px; }
+            h2 { font-size: 30px !important; letter-spacing: -0.5px; }
+
+            /* Sobre */
+            .sobre-grid { grid-template-columns: 1fr; gap: 40px; }
+            .sobre-grid > div:last-child { height: 220px !important; }
+
+            /* Impact box */
+            .impact-box { padding: 30px 20px; margin-top: 40px; }
+            .impact-grid { grid-template-columns: 1fr; gap: 20px; }
+
+            /* Casos */
+            .case { padding: 24px; }
+            .case-grid { grid-template-columns: 1fr; gap: 24px; }
+            .logo-image { height: 180px; }
+
+            /* Pacotes */
+            .pacotes-inner { padding: 60px 24px; }
+            .pricing-grid { grid-template-columns: 1fr; gap: 24px; }
+            .featured-card { transform: none; }
+            .package-card { padding: 30px 24px; }
+
+            /* Extras */
+            .extras-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+            .extra-card { padding: 20px; }
+            .extra-card h4 { font-size: 15px; }
+
+            /* Botões */
+            .btn-main { padding: 16px 24px; font-size: 14px; width: 100%; display: block; }
+
+            /* Formulário — font-size 16px evita zoom automático no iOS */
+            .form-input { font-size: 16px; }
+
+            /* Modal */
+            #modal-overlay > div { padding: 40px 24px !important; }
+        }
+
+        @media (max-width: 420px) {
+            .extras-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 30px; }
+        }
     </style>
 </head>
 <body>
@@ -321,154 +376,4 @@
                 <div class="extra-card">
                     <span class="extra-icon">🌐</span>
                     <h4>Website completo</h4>
-                    <p>Evolução da landing page para site completo.</p>
-                </div>
-            </div>
-
-            <div style="margin-top: 60px;">
-                <a href="#contacto" class="btn-main" style="background: var(--navy);">QUERO ADICIONAR EXTRAS AO MEU PROJETO</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto — dentro da mesma secção branca (sem separação de cor) -->
-    <section class="section" id="contacto" style="background: var(--white); padding-top: 20px; text-align: center; border-top: 1px solid #eee;">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="font-size: 42px; color: var(--navy); margin-bottom: 10px;">
-                Solicitar Diagnóstico Gratuito
-            </h2>
-            <p style="margin-bottom: 50px; opacity: 0.7; font-size: 18px;">
-                Diga-nos o nome do seu negócio e entraremos em contacto para agendar a visita.
-            </p>
-
-            <form id="contactForm" action="https://formspree.io/f/mgornkzg" method="POST" style="max-width: 600px; margin: 0 auto; text-align: left;">
-                <div style="margin-bottom: 20px;">
-                    <label class="form-label">Nome do Negócio</label>
-                    <input id="field-negocio" type="text" name="negocio" class="form-input" placeholder="Ex: Barbearia Central" required>
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <label class="form-label">Telemóvel / WhatsApp</label>
-                    <input id="field-telemovel" type="tel" name="telemovel" class="form-input" placeholder="9xxxxxxxx" required>
-                </div>
-                <div style="margin-bottom: 25px;">
-                    <label class="form-label">O que gostaria de melhorar?</label>
-                    <textarea id="field-mensagem" rows="4" name="mensagem" class="form-input" placeholder="Ex: Gostaria de renovar a fachada e o logótipo..."></textarea>
-                </div>
-                <button type="submit" class="btn-main" style="width: 100%; font-size: 18px; padding: 18px;">
-                    ENVIAR PEDIDO DE DIAGNÓSTICO
-                </button>
-            </form>
-
-            <!-- CTA WhatsApp -->
-            <div style="margin-top: 50px; padding-top: 40px; border-top: 1px solid #eee;">
-                <p style="font-size: 16px; opacity: 0.7; margin-bottom: 20px;">Prefere falar directamente?</p>
-                <a href="https://wa.me/351912432719" class="btn-main" style="background: #25d366; padding: 18px 50px; display: inline-flex; align-items: center; gap: 10px; border-radius: 8px;">
-                    💬 RECEBER DIAGNÓSTICO NO WHATSAPP
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p style="margin: 0;">© 2026 CRIATIVAMENTE</p>
-    </footer>
-
-    <!-- ══ MODAL DE CONFIRMAÇÃO ══ -->
-    <div id="modal-overlay" style="
-        display: none;
-        position: fixed; inset: 0;
-        background: rgba(15,31,46,0.75);
-        z-index: 1000;
-        align-items: center;
-        justify-content: center;
-    ">
-        <div style="
-            background: var(--white);
-            border-radius: 16px;
-            padding: 60px 50px;
-            max-width: 480px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
-            animation: popIn 0.25s ease;
-        ">
-            <div style="font-size: 52px; margin-bottom: 20px;">✅</div>
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; color: var(--navy); margin-bottom: 15px;">Pedido enviado!</h3>
-            <p style="opacity: 0.75; font-size: 16px; line-height: 1.7; margin-bottom: 30px;">
-                Obrigado! Recebemos o seu pedido de diagnóstico e entraremos em contacto em breve.<br>
-                O WhatsApp vai abrir já a seguir para confirmar.
-            </p>
-            <button onclick="fecharModal()" class="btn-main" style="width: 100%; font-size: 16px; padding: 15px;">
-                OK, FECHAR
-            </button>
-        </div>
-    </div>
-
-    <style>
-        @keyframes popIn {
-            from { transform: scale(0.85); opacity: 0; }
-            to   { transform: scale(1);    opacity: 1; }
-        }
-    </style>
-
-    <script>
-        const WA_NUMBER = '351912432719'; // ← substitui pelo número real (sem espaços, sem +)
-
-        function abrirWhatsApp(negocio, telemovel, mensagem) {
-            const texto = `Olá! Vim pelo site e gostaria de pedir um diagnóstico gratuito.\n\n` +
-                          `*Negócio:* ${negocio}\n` +
-                          `*Telemóvel:* ${telemovel}\n` +
-                          (mensagem ? `*O que quero melhorar:* ${mensagem}` : '');
-            const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(texto)}`;
-            window.open(url, '_blank');
-        }
-
-        function fecharModal() {
-            document.getElementById('modal-overlay').style.display = 'none';
-        }
-
-        // Fechar modal ao clicar fora
-        document.getElementById('modal-overlay').addEventListener('click', function(e) {
-            if (e.target === this) fecharModal();
-        });
-
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const negocio   = document.getElementById('field-negocio').value.trim();
-            const telemovel = document.getElementById('field-telemovel').value.trim();
-            const mensagem  = document.getElementById('field-mensagem').value.trim();
-            const btn       = this.querySelector('button[type="submit"]');
-
-            // Estado de loading
-            btn.textContent = 'A enviar...';
-            btn.disabled = true;
-
-            try {
-                const res = await fetch(this.action, {
-                    method: 'POST',
-                    headers: { 'Accept': 'application/json' },
-                    body: new FormData(this)
-                });
-
-                if (res.ok) {
-                    this.reset();
-                    // Mostrar modal
-                    const overlay = document.getElementById('modal-overlay');
-                    overlay.style.display = 'flex';
-                    // Abrir WhatsApp após 1.2s (tempo para ler o modal)
-                    setTimeout(() => abrirWhatsApp(negocio, telemovel, mensagem), 1200);
-                } else {
-                    alert('Ocorreu um erro ao enviar. Por favor tente novamente.');
-                }
-            } catch (err) {
-                alert('Sem ligação. Verifique a internet e tente novamente.');
-            }
-
-            btn.textContent = 'ENVIAR PEDIDO DE DIAGNÓSTICO';
-            btn.disabled = false;
-        });
-    </script>
-
-</body>
-</html>
+                    <p>Evolução da 
